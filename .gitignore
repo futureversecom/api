@@ -2,6 +2,7 @@ _book/
 build/
 build-*/
 coverage/
+docs
 node_modules/
 tmp/
 /import_map.json
