@@ -20,7 +20,7 @@ import { unwrapStorageType } from '@polkadot/types/util';
 //import kusamaMeta, { rpc as kusamaRpc, version as kusamaVer } from '@polkadot/types-support/metadata/static-kusama';
 //import polkadotMeta, { rpc as polkadotRpc, version as polkadotVer } from '@polkadot/types-support/metadata/static-polkadot';
 import porciniMeta, { rpc as porciniRpc } from '@polkadot/types-support/metadata/static-porcini';
-import rootnetworkMeta, { rpc as rootnetworkRpc } from '@polkadot/types-support/metadata/static-rootnetwork';
+import rootMeta, { rpc as rootRpc } from '@polkadot/types-support/metadata/static-root';
 import substrateMeta from '@polkadot/types-support/metadata/static-substrate';
 import { isHex, stringCamelCase, stringLowerFirst } from '@polkadot/util';
 import { blake2AsHex } from '@polkadot/util-crypto';
@@ -75,8 +75,8 @@ const ALL_STATIC: Record<string, StaticDef> = {
         rpc: porciniRpc
     },
     root: {
-        meta: rootnetworkMeta,
-        rpc: rootnetworkRpc
+        meta: rootMeta,
+        rpc: rootRpc
     },
 };
 
