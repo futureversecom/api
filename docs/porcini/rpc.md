@@ -12,13 +12,19 @@ The following sections contain known RPC methods that may be available on specif
 
 - **[childstate](#childstate)**
 
+- **[dex](#dex)**
+
 - **[eth](#eth)**
 
 - **[eth/net](#eth/net)**
 
 - **[eth/web3](#eth/web3)**
 
+- **[ethy](#ethy)**
+
 - **[grandpa](#grandpa)**
+
+- **[nft](#nft)**
 
 - **[offchain](#offchain)**
 
@@ -166,6 +172,41 @@ ___
 - **interface**: `api.rpc.childstate.getStorageSize`
 - **jsonrpc**: `childstate_getStorageSize`
 - **summary**: Returns the size of a child storage entry at a block state
+
+___
+
+
+## dex
+ 
+### getAmountsIn(amountOut: `Balance`, path: `Vec<AssetId>`): `Json`
+- **interface**: `api.rpc.dex.getAmountsIn`
+- **jsonrpc**: `dex_getAmountsIn`
+- **summary**: Given an array of AssetIds, return amounts in for an amount out
+ 
+### getAmountsOut(amountIn: `Balance`, path: `Vec<AssetId>`): `Json`
+- **interface**: `api.rpc.dex.getAmountsOut`
+- **jsonrpc**: `dex_getAmountsOut`
+- **summary**: Given an array of AssetIds, return amounts out for an amount in
+ 
+### getLPTokenID(assetA: `AssetId`, assetB: `AssetId`): `Json`
+- **interface**: `api.rpc.dex.getLPTokenID`
+- **jsonrpc**: `dex_getLPTokenID`
+- **summary**: Given two AssetIds, return liquidity token created for the pair
+ 
+### getLiquidity(assetA: `AssetId`, assetB: `AssetId`): `Json`
+- **interface**: `api.rpc.dex.getLiquidity`
+- **jsonrpc**: `dex_getLiquidity`
+- **summary**: Given two AssetIds, return liquidity
+ 
+### getTradingPairStatus(assetA: `AssetId`, assetB: `AssetId`): `Json`
+- **interface**: `api.rpc.dex.getTradingPairStatus`
+- **jsonrpc**: `dex_getTradingPairStatus`
+- **summary**: Given two AssetIds, return whether trading pair is enabled or disabled
+ 
+### quote(amountA: `u128`, reserveA: `u128`, reserveB: `u128`): `Json`
+- **interface**: `api.rpc.dex.quote`
+- **jsonrpc**: `dex_quote`
+- **summary**: Given some amount of an asset and pair reserves, returns an equivalent amount of the other asset
 
 ___
 
@@ -420,6 +461,26 @@ ___
 ___
 
 
+## ethy
+ 
+### getEventProof(eventId: `EventProofId`): `Option<EthEventProofResponse>`
+- **interface**: `api.rpc.ethy.getEventProof`
+- **jsonrpc**: `ethy_getEventProof`
+- **summary**: Get ETH event proof for event Id
+ 
+### getXrplTxProof(eventId: `EventProofId`): `Option<XrplEventProofResponse>`
+- **interface**: `api.rpc.ethy.getXrplTxProof`
+- **jsonrpc**: `ethy_getXrplTxProof`
+- **summary**: Get XRPL event proof for event Id
+ 
+### subscribeEventProofs(): `Null`
+- **interface**: `api.rpc.ethy.subscribeEventProofs`
+- **jsonrpc**: `ethy_subscribeEventProofs`
+- **summary**: Subscribe to Eth event proof.
+
+___
+
+
 ## grandpa
  
 ### proveFinality(blockNumber: `BlockNumber`): `Option<EncodedFinalityProofs>`
@@ -436,6 +497,21 @@ ___
 - **interface**: `api.rpc.grandpa.subscribeJustifications`
 - **jsonrpc**: `grandpa_subscribeJustifications`
 - **summary**: Subscribes to grandpa justifications
+
+___
+
+
+## nft
+ 
+### ownedTokens(collectionId: `CollectionUuid`, who: `AccountId`, cursor: `SerialNumber`, limit: `u16`): `Json`
+- **interface**: `api.rpc.nft.ownedTokens`
+- **jsonrpc**: `nft_ownedTokens`
+- **summary**: Get all NFTs owned by an account
+ 
+### tokenUri(tokenId: `TokenId`): `Json`
+- **interface**: `api.rpc.nft.tokenUri`
+- **jsonrpc**: `nft_tokenUri`
+- **summary**: Get the URI of a token
 
 ___
 

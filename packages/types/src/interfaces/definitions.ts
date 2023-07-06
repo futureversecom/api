@@ -81,3 +81,8 @@ export { default as childstate } from './childstate/definitions.js';
 export { default as offchain } from './offchain/definitions.js';
 export { default as payment } from './payment/definitions.js';
 export { default as state } from './state/definitions.js';
+
+// root network specific types
+export { default as dex } from './dex/definitions.js';
+export { default as ethy } from './ethy/definitions.js';
+export { default as nft } from './nft/definitions.js';
